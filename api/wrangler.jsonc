@@ -1,0 +1,29 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "tech-blog-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-05-30",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    "CORS_ORIGIN": "http://localhost:3000",
+    "PUBLIC_MEDIA_BASE_URL": "http://localhost:8787/media",
+    "VISIT_LOG_RETENTION_DAYS": "90"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "tech-blog-db",
+      "database_id": "replace-with-cloudflare-d1-database-id",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MEDIA",
+      "bucket_name": "tech-blog-media"
+    }
+  ]
+}
